@@ -17,7 +17,7 @@ class SimpleChat(WebSocket):
 
     def handleClose(self):
        clients.remove(self)
-       print(self.address, 'closed')
+       print self.address, 'closed'
        for client in clients:
           client.sendMessage(self.address[0] + u' - disconnected')
 
