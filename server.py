@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/home/treeplate/lib/python')
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
-
+print("sent")
 clients = []
 class SimpleChat(WebSocket):
 
