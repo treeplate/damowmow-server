@@ -10,7 +10,7 @@ class SimpleChat(WebSocket):
              client.sendMessage(self.address[0] + u' - ' + self.data)
 
     def handleConnected(self):
-       print(self.address, 'connected')
+       print self.address, 'connected'
        for client in clients:
           client.sendMessage(self.address[0] + u' - connected')
        clients.append(self)
