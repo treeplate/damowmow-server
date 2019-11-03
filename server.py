@@ -6,11 +6,11 @@ users = []
 class SimpleChat(WebSocket):
 
     def handleMessage(self):
-       for client in clients:
-        if self.data not in users:
+       if self.data not in users:
              users.append(self.data)
-             client.sendMessage(users);
-        client.sendMessage(self.address[0] + u' - ' + self.data)
+       for client in clients:
+             client.sendMessage(users)
+             client.sendMessage(self.address[0] + u' - ' + self.data)
 
     def handleConnected(self):
        print self.address, 'connected'
