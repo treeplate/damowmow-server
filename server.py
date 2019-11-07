@@ -13,6 +13,8 @@ class SimpleChat(WebSocket):
              if self.data.startswith("user "):
                 users[clients.index(self)] = self.data[5:];
                 client.sendMessage(self.address[0] + u' is called ' + users[clients.index(self)])
+             elif self.data == "request":
+                self.sendMessage(users)
              else:
                 client.sendMessage(users[clients.index(self)] + ' said "' + self.data + '".')
     def handleConnected(self):
