@@ -31,7 +31,7 @@ class SimpleChat(WebSocket):
        users.remove(users[clients.index(self)])
        print self.address, 'closed'
        for client in clients:
-          client.sendMessage(users[clients.index(self)] - disconnected')
+          client.sendMessage(users[clients.index(self)] + '- disconnected')
 
 server = SimpleWebSocketServer('', 8000, SimpleChat)
 server.serveforever()
