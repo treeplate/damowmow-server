@@ -10,16 +10,16 @@ class SimpleChat(WebSocket):
           users[clients.index(self)] = self.data[5:];
           print self.address[0] + u' is called ' + users[clients.index(self)]
        elif self.data == "request":
-          self.sendMessage("\n".join(users))
+          self.sendMessage("request:" + ("\n".join(users)))
        for client in clients:
              if self.data.startswith("user "):
-                client.sendMessage(self.address[0] + u' is called ' + users[clients.index(self)])
+                client.sendMessage("usernamed:"+self.address[0] + u' is called ' + users[clients.index(self)])
              elif self.data != "request":
-                client.sendMessage(users[clients.index(self)] + ' said "' + self.data + '".')
+                client.sendMessage("message:"+users[clients.index(self)] + ' said "' + self.data + '".')
     def handleConnected(self):
        print self.address, 'connected'
        for client in clients:
-          client.sendMessage(self.address[0] + u' - connected')
+          client.sendMessage("connection:"+self.address[0] + u' - connected')
           
        clients.append(self)
        users.append("unnamed")    
@@ -27,7 +27,7 @@ class SimpleChat(WebSocket):
     def handleClose(self):
        print(users[clients.index(self)] + '- disconnected')
        for client in clients:
-          client.sendMessage(users[clients.index(self)] + '- disconnected')
+          client.sendMessage("disconnection:"+users[clients.index(self)] + '- disconnected')
        users.remove(users[clients.index(self)])
        clients.remove(self)
        print self.address, 'closed'
