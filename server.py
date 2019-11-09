@@ -14,9 +14,7 @@ class SimpleChat(WebSocket):
        for client in clients:
              if self.data.startswith("user "):
                 client.sendMessage(self.address[0] + u' is called ' + users[clients.index(self)])
-             elif self.data == "request":
-                #hi
-             else:
+             elif self.data != "request":
                 client.sendMessage(users[clients.index(self)] + ' said "' + self.data + '".')
     def handleConnected(self):
        print self.address, 'connected'
