@@ -8,9 +8,12 @@ class SimpleChat(WebSocket):
     def handleMessage(self):
        if self.data.startswith("user "):
           users[clients.index(self)] = self.data[5:];
+          if(users[clients.index(self)].includes(",")){
+              while users[clients.index(self)].includes(","):
+                users[clients.index(self)][users[clients.index(self)].indexOf(",")] 
           print self.address[0] + u' is called ' + users[clients.index(self)]
        elif self.data == "request":
-          self.sendMessage("request:" + ("\n".join(users)))
+          self.sendMessage("request:" + (", ".join(users)))
        for client in clients:
              if self.data.startswith("user "):
                 client.sendMessage("usernamed:"+self.address[0] + u' is called ' + users[clients.index(self)])
