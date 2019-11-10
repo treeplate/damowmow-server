@@ -33,5 +33,5 @@ class SimpleChat(WebSocket):
        print self.address, 'closed'
        
 
-server = SimpleWebSocketServer('', 8000, SimpleChat)
+server = SimpleWebSocketServer('', 8001, SimpleChat)
 server.serveforever()
