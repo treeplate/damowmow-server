@@ -13,7 +13,7 @@ class SimpleChat(WebSocket):
                 users[clients.index(self)][users[clients.index(self)].indexOf(",")] = "-";
           print self.address[0] + u' is called ' + users[clients.index(self)]
        elif self.data == "request":
-          self.sendMessage("request:" + (", ".join(users)))
+          self.sendMessage("request:" + (",".join(users)))
        for client in clients:
              if self.data.startswith("user "):
                 client.sendMessage("usernamed:"+self.address[0] + u' is called ' + users[clients.index(self)])
