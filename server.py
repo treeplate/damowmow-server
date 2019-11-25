@@ -1,4 +1,5 @@
 import sys
+import traceback
 sys.path.append('/home/treeplate/lib/python')
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 clients = []
