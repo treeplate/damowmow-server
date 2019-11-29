@@ -15,7 +15,7 @@ class SimpleChat(WebSocket):
                         info[clients.index(self)][2] = True
                     else:
                         self.sendMessage("incorrect password")
-                       info[clients.index(self)][2] = False
+                        info[clients.index(self)][2] = False
                 else:
                     info[clients.index(self)][0] = userinfo[0]
                     info[clients.index(self)][1] = userinfo[1]
