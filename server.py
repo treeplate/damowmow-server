@@ -32,7 +32,7 @@ class SimpleChat(WebSocket):
                     client.sendMessage("usernamed:"+self.address[0] + u' is called ' + info[clients.index(self)][0])
                 elif self.data != "request":
                     if(info[clients.index(self)][2] == True):
-                        client.sendMessage("message:"+users[clients.index(self)] + ' said "' + self.data + '".')
+                        client.sendMessage("message:"+info[clients.index(self)][0] + ' said "' + self.data + '".')
                     
         except:
                 traceback.print_exc()
@@ -42,8 +42,8 @@ class SimpleChat(WebSocket):
             print(self.address, 'connected')
             for client in clients:
                 client.sendMessage("connection:"+self.address[0] + u' - connected')
-            if(userinfo[0] in info):
-                print userinfo[0] + " connected"     
+            if(self in clients):
+                print info[clients.index(self)][0] + " connected"     
             else:
                 clients.append(self)
                 info.append(["unnamed", "", False])
