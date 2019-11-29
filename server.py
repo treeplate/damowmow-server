@@ -42,7 +42,7 @@ class SimpleChat(WebSocket):
         for client in clients:
             client.sendMessage("connection:"+self.address[0] + u' - connected')
         if(userinfo[0] in info):
-            #la la la           
+            print userinfo[0] + " connected"     
         else:
             clients.append(self)
             info.append(["unnamed", "", False])
