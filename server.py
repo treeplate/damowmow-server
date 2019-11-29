@@ -11,7 +11,7 @@ class SimpleChat(WebSocket):
             if self.data.startswith("user "):
                 userinfo = self.data[5:].split(" ")
                 if(userinfo[0] in info):
-                    if(userinfo[1] == info[clients.index(self)][1]:
+                    if(userinfo[1] == info[clients.index(self)][1]):
                         info[clients.index(self)][2] = True
                     else:
                         self.sendMessage("incorrect password")
