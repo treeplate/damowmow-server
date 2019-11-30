@@ -17,6 +17,7 @@ class SimpleChat(WebSocket):
                         self.sendMessage("incorrect password")
                         info[clients.index(self)][2] = False
                 else:
+                    
                     info[clients.index(self)][0] = userinfo[0]
                     info[clients.index(self)][1] = userinfo[1]
                     info[clients.index(self)][2] = True
@@ -43,18 +44,17 @@ class SimpleChat(WebSocket):
             print(self.address, 'connected')
             for client in clients:
                 client.sendMessage("connection:"+self.address[0] + u' - connected')
-            if(self in clients):
-                print info[clients.index(self)][0] + " connected"     
-            else:
                 clients.append(self)
                 info.append(["unnamed", "", False])
         except:
                 traceback.print_exc()
     def handleClose(self):
-        print(users[clients.index(self)] + '- disconnected')
+        print(info[clients.index(self)][0] + '- disconnected')
         for client in clients:
-            client.sendMessage("disconnection:"+users[clients.index(self)] + '- disconnected')
+            client.sendMessage("disconnection:"+info[clients.index(self)][0] + '- disconnected')
         info[clients.index(self)][2] == False
+        info.remove(info[clients.index(self)]);
+        clients.remove(self)
         print(self.address, 'closed')
 
 
