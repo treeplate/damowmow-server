@@ -44,8 +44,8 @@ class SimpleChat(WebSocket):
             print(self.address, 'connected')
             for client in clients:
                 client.sendMessage("connection:"+self.address[0] + u' - connected')
-                clients.append(self)
-                info.append(["unnamed", "", False])
+            clients.append(self)
+            info.append(["unnamed", "", False])
         except:
                 traceback.print_exc()
     def handleClose(self):
