@@ -21,20 +21,20 @@ class SimpleChat(WebSocket):
 
     def handleMessage(self):
         try:
-            print(self, ', message')
+            print self, ', message'
         except:
             traceback.print_exc()
 
     def handleConnected(self):
         try:
             clients.append(self)
-            print(self.address, 'connected')
+            print self.address, 'connected'
         except:
                 traceback.print_exc()
     def handleClose(self):
         try:
             clients.remove(self)
-            print(self.address, 'closed')
+            print self.address, 'closed'
         except:
             traceback.print_exc()
 
