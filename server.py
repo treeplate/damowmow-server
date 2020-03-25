@@ -6,7 +6,7 @@ clients = []
 
 def satisfy(list):
     pattern = list[0]
-    input = list[i]
+    input = list[1]
     marks = [True]
     for x in range(0, len(pattern)):
         if pattern[x] == '?':
