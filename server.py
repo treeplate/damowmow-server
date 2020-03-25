@@ -6,7 +6,7 @@ clients = []
 
 def satisfy(pattern, input):
     marks = [True]
-    for x in range(0, len(pattern)-1):
+    for x in range(0, len(pattern)):
         if pattern[x] == '?':
             marks.append(input[x])
         elif pattern[x] == input[x]:
