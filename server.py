@@ -5,14 +5,14 @@ from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 clients = []
 
 def satisfy(pattern, input):
-    marks = [true]
+    marks = [True]
     for x in range(0, pattern.length-1):
         if pattern[x] == '?':
             marks.append(input[x])
         elif pattern[x] == input[x]:
             b = 'c'
         else:
-            marks[0] = false
+            marks[0] = False
     return marks
             
             
