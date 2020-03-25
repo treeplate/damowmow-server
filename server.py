@@ -21,7 +21,7 @@ class SimpleChat(WebSocket):
 
     def handleMessage(self):
         try:
-            print self.data, ', message'
+            print self.data + ', message'
         except:
             traceback.print_exc()
 
