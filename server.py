@@ -10,7 +10,7 @@ def satisfy(pattern, input):
         if pattern[x] == '?':
             marks.append(input[x])
         elif pattern[x] == input[x]:
-            #nothing
+            b = 'c'
         else:
             marks[0] = false
     return marks
