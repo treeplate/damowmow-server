@@ -4,7 +4,9 @@ sys.path.append('/home/treeplate/lib/python')
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 clients = []
 
-def satisfy(pattern, input):
+def satisfy(list):
+    pattern = list[0]
+    input = list[i]
     marks = [True]
     for x in range(0, len(pattern)):
         if pattern[x] == '?':
@@ -21,7 +23,7 @@ class SimpleChat(WebSocket):
 
     def handleMessage(self):
         try:
-            print ', '.join(map(str, satisfy("??? ?", self.data))) + ', message'
+            print ', '.join(map(str, satisfy("??? ?", self.data.split()))) + ', message'
         except:
             traceback.print_exc()
 
