@@ -23,7 +23,7 @@ class SimpleChat(WebSocket):
 
     def handleMessage(self):
         try:
-            print ', '.join(map(str, satisfy(self.data.split()))) + ', message'
+            self.sendMessage(', '.join(map(str, satisfy(self.data.split()))))
         except:
             traceback.print_exc()
 
