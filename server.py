@@ -8,14 +8,16 @@ def satisfy(list):
     pattern = list[0]
     input = list[1]
     marks = [True]
-    for x in range(0, len(pattern)):
-        if pattern[x] == '?':
-            marks.append(input[x])
-        elif pattern[x] == input[x]:
-            b = 'c'
-        else:
-            marks[0] = False
-    return marks
+    if len(pattern) == len(input):
+        for x in range(0, len(pattern)):
+            if pattern[x] == '?':
+                marks.append(input[x])
+            elif pattern[x] == input[x]:
+                b = 'c'
+            else:
+                marks[0] = False
+            return marks
+    return [False]
             
             
 
