@@ -27,6 +27,7 @@ class SimpleChat(WebSocket):
         try:
             print("recieved " + self.data);
             self.sendMessage(','.join(map(str, satisfy(self.data.split(",")))))
+            print('sent ' + ','.join(map(str, satisfy(self.data.split(",")))))
         except:
             traceback.print_exc()
 
