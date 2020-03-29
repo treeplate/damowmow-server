@@ -10,6 +10,7 @@ def satisfy(list):
     print("pattern " + pattern + "input " + input);
     marks = [True]
     if len(pattern) == len(input):
+        print(len(pattern));
         for x in range(0, len(pattern)):
             if pattern[x] == '?':
                 marks.append(input[x])
