@@ -19,7 +19,8 @@ def satisfy(list):
                 b = 'c'
             else:
                 marks[0] = False
-            return marks
+            
+        return marks
     return [False]
             
             
