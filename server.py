@@ -7,6 +7,7 @@ clients = []
 def satisfy(list):
     pattern = list[0]
     input = list[1]
+    print("pattern " + pattern + "input " + input);
     marks = [True]
     if len(pattern) == len(input):
         for x in range(0, len(pattern)):
