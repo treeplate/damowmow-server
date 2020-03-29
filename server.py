@@ -12,6 +12,7 @@ def satisfy(list):
     if len(pattern) == len(input):
         print(len(pattern));
         for x in range(0, len(pattern)):
+            print(pattern[x] + input[x]);
             if pattern[x] == '?':
                 marks.append(input[x])
             elif pattern[x] == input[x]:
