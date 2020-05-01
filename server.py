@@ -30,8 +30,9 @@ class SimpleChat(WebSocket):
     def handleMessage(self):
         try:
             print("recieved " + self.data);
-            self.sendMessage(','.join(map(str, satisfy(self.data.split(",")))))
-            print('sent ' + ','.join(map(str, satisfy(self.data.split(",")))))
+            message = ','.join(map(str, satisfy(self.data.split(","))))
+            self.sendMessage(message)
+            print('sent ' + message)
         except:
             traceback.print_exc()
 
