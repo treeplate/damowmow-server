@@ -5,9 +5,9 @@ from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 clients = []
 
 def satisfy(list):
-    pattern = list[0]
-    input = list[1]
-    print("pattern " + pattern + "input " + input);
+    pattern = list[1]
+    input = list[2]
+    print(list[0] + ": pattern " + pattern + " input " + input);
     marks = [True]
     if len(pattern) == len(input):
         print(len(pattern));
