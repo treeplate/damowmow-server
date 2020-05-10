@@ -5,23 +5,26 @@ from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 clients = []
 
 def satisfy(list):
-    pattern = list[1]
-    input = list[2]
-    print(list[0] + ": pattern " + pattern + " input " + input);
-    marks = [True]
-    if len(pattern) == len(input):
-        print(len(pattern));
-        for x in range(0, len(pattern)):
-            print(pattern[x] + input[x]);
-            if pattern[x] == '?':
-                marks.append(input[x])
-            elif pattern[x] == input[x]:
-                b = 'c'
-            else:
-                marks[0] = False
+    if len(list) > 2:
+        pattern = list[1]
+        input = list[2]
+        print(list[0] + ": pattern " + pattern + " input " + input);
+        marks = [True]
+        if len(pattern) == len(input):
+            print(len(pattern));
+            for x in range(0, len(pattern)):
+                print(pattern[x] + input[x]);
+                if pattern[x] == '?':
+                    marks.append(input[x])
+                elif pattern[x] == input[x]:
+                    b = 'c'
+                else:
+                    marks[0] = False
             
-        return marks
-    return [False]
+            return marks
+        return [False]
+    else:
+        return [False]
             
             
 
