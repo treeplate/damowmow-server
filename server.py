@@ -29,7 +29,9 @@ def satisfy(list):
            data[spaces[1]] = spaces[2]
            return ["AC"]
         if(spaces[0] == "get"):
-           return [data[spaces[1]]]
+           if spaces[1] in data:
+             return [data[spaces[1]]]
+           return null
         
             
 
