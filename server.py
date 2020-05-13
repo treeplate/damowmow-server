@@ -31,7 +31,7 @@ def satisfy(list):
         if(spaces[0] == "get"):
            if spaces[1] in data:
              return [data[spaces[1]]]
-           return null
+           return ["null"]
         
             
 
