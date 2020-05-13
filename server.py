@@ -27,9 +27,9 @@ def satisfy(list):
         spaces = list[0].split(" ")
         if(spaces[0] == "store"):
            data[spaces[1]] = spaces[2]
-           return "AC" 
+           return ["AC"]
         if(spaces[0] == "get"):
-           return data[spaces[1]]
+           return [data[spaces[1]]]
         
             
 
