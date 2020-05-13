@@ -24,7 +24,7 @@ def satisfy(list):
             return marks
         return [False]
     else:
-        spaces = list.split(" ")
+        spaces = list[0].split(" ")
         if(spaces[0] == "store"):
            data[spaces[1]] = spaces[2]
            return "AC" 
