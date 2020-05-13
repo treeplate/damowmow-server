@@ -3,7 +3,7 @@ import traceback
 sys.path.append('/home/treeplate/lib/python')
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 clients = []
-
+data = {}
 def satisfy(list):
     if len(list) > 2:
         pattern = list[1]
@@ -24,8 +24,13 @@ def satisfy(list):
             return marks
         return [False]
     else:
-        return [False]
-            
+        spaces = list.split(" ")
+        if(spaces[0] == "store"):
+           data[spaces[1]] = spaces[2]
+           return "AC" 
+        if(spaces[0] == "get"):
+           return data[spaces[1]]
+        
             
 
 class SimpleChat(WebSocket):
