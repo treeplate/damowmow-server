@@ -60,5 +60,5 @@ class SimpleChat(WebSocket):
             traceback.print_exc()
 
 
-server = SimpleWebSocketServer('', 8001, SimpleChat)
+server = SimpleWebSocketServer('', 80, SimpleChat)
 server.serveforever()
